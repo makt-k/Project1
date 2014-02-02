@@ -1,0 +1,2 @@
+module IdealogsHelper
+end

@@ -1,0 +1,2 @@
+class IdealogsController < ApplicationController
+end
