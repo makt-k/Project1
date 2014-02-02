@@ -6,8 +6,8 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 
-get "/" do
-  doc = Nokogiri::XML(open("http://www.vam.ac.uk/api/xml/museumobject/"))
+get "/:term" do |term|
+  doc = Nokogiri::XML(open("http://www.vam.ac.uk/api/xml/museumobject/?q=#{term}&images=1"))
   id = doc.xpath("//primary_image_id")
   string = id.inner_text
   @keys = string.scan(/.{1,10}/)
