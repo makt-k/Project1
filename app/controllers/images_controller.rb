@@ -1,7 +1,6 @@
-require 'open-uri'
-
 class ImagesController < ApplicationController
 
+require 'open-uri'
   def show
     if params[:term] == nil
       doc = Nokogiri::XML(open("http://www.vam.ac.uk/api/xml/museumobject/"))

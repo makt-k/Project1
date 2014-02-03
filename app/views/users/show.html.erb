@@ -1,0 +1,13 @@
+<div class="container">
+  <header>
+    <h2>Idealogs</h2>
+  </header>
+    <dl>
+      <% @user.idealogs.each do |idealog| %>
+      <dt><%=link_to idealog.title, user_idealog_path(idealog.user_id, idealog.id) %></dt><dt>Created <%= time_ago_in_words(idealog.created_at)%> ago</dt>
+      <% end %>
+    </dl>
+    <%= link_to "Log a new idea", new_user_idealog_path(@user.id) %><br>
+    <%= link_to "Collect inspirations", :root %>
+</div>
+
