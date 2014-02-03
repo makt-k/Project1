@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140202223958) do
   create_table "expos", force: true do |t|
     t.text     "title"
     t.text     "body"
+    t.text     "url"
     t.text     "tag"
     t.integer  "user_id"
     t.datetime "created_at"
