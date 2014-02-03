@@ -12,3 +12,20 @@
  *= require_tree .
  */
 @import "bootstrap";
+
+li {
+    display: inline;
+    padding: 10px 20px 10px 0px;
+    font-weight: bold;
+    }
+div#sidebar {
+   width: 500px;
+   right: 50%;
+   margin-right: -500px;
+   position: absolute;
+  }
+
+div#yield {
+  margin-right: 500px;
+  position: absolute;
+}
