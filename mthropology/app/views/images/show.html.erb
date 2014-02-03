@@ -1,18 +1,19 @@
 
-<div id="content">
+<div class="container">
   <div id="search">
     <%= form_tag("/", method: "get") do%>
       <p><%= text_field_tag(:term) %></p>
       <p><%= submit_tag("Search") %></p>
     <% end %>
   </div>
-  <div class="row">
-    <div class="col-sm-6 col-md-3">
-      <a href="#" class="thumbnail">
+  <div id="content">
+    <div class="row-fluid">
+      <div class="offset">
         <% @sources.each do |source| %>
-        <img src="<%= source %>" alt="...">
+        <img src="<%= source %>" alt="VAM" height="250" width="250">
         <% end %>
-      </a>
+      </div>
     </div>
   </div>
 </div>
+
