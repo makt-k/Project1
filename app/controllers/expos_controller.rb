@@ -12,7 +12,7 @@ class ExposController < ApplicationController
 
   def create
     @user.expos << Expo.create!(expo_params)
-    redirect_to user_path(@user.id)
+    redirect_to :root
   end
 
   def show

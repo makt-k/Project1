@@ -1,10 +1,10 @@
 <div class="container">
   <div id="yield">
     <header>
-      <h2><%= @idealog.title%></h2>
+      <h2><%= @expo.title%></h2>
     </header>
     <body>
-      <p><%= @idealog.body %></p>
+      <p><%= @expo.body %></p>
     </body>
     <%= link_to "Log a new idea", new_user_idealog_path(@user.id) %><br>
     <%= link_to "Create an expo", new_user_expo_path(@user.id) %><br>
