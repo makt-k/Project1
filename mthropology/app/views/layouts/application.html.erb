@@ -6,6 +6,25 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+<header>
+  <div class="jumbotron">
+    <nav class="navbar-nav">
+      <%= link_to "Sign Up", new_user_path %>
+    </nav>
+    <div class="container">
+      <h1>Mthropology</h1>
+        <div class="navbar-form navbar-left" role="search">
+          <%= form_tag("/", method: "get") do%>
+          <%= text_field_tag(:term) %>
+        </div>
+        <div class="btn">
+          <%= submit_tag("Search") %>
+        </div>
+          <% end %>
+    </div>
+  </div>
+</header>
+
 <body>
   <%= yield %>
 </body>
