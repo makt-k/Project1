@@ -1,0 +1,7 @@
+<div class="container">
+  <ul>
+    <% @expos.each do |expo| %>
+      <li> <%= link_to expo.title, user_expo_path(expo.user.id, expo.id)%>  by: <%= link_to expo.user.name, user_path(expo.user_id)%>  Created <%= time_ago_in_words(expo.created_at)%> ago</li>
+    <% end %>
+  </ul>
+</div>

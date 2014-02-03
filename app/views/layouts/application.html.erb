@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mthropology</title>
+  <title>mthropology</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -10,11 +10,14 @@
   <div class="jumbotron">
     <nav class="navbar navbar-fixed-top">
       <div class="container">
-        <%= link_to "Sign Up", new_user_path %>
+        <ul>
+          <li><%= link_to "sign up", new_user_path %></li>
+          <li><%= link_to "collect inspirations", images_path %></li>
+        </ul>
       </div>
     </nav>
     <div class="container">
-      <h1>Mthropology</h1>
+      <h1>mthropology</h1>
         <div class="navbar-form navbar-left" role="search">
           <%= form_tag("/", method: "get") do%>
           <%= text_field_tag(:term) %>
@@ -28,7 +31,18 @@
 </header>
 
 <body>
-  <%= yield %>
+ <div id="sidebar">
+  <div class="vam">
+    <% show %>
+    <% @sources.each do |source| %>
+      <img src="<%= source %>" alt="VAM" height="100" width="100">
+    <% end %>
+  </div>
+ </div>
+
+  <div id="yield">
+    <%= yield %>
+  </div>
 </body>
 </html>
 
