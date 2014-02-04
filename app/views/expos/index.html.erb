@@ -2,7 +2,10 @@
     <div id="yield">
     <dl>
       <% @expos.each do |expo| %>
-        <dt> <%= link_to expo.title, user_expo_path(expo.user.id, expo.id)%>  by: <%= link_to expo.user.name, user_path(expo.user_id)%>  Created <%= time_ago_in_words(expo.created_at)%> ago</dt>
+        <dt> <%= link_to expo.title, user_expo_path(expo.user.id, expo.id)%>  by: <%=expo.user.name%>
+        </dt>
+          <p class="time">Created <%= time_ago_in_words(expo.created_at)%> ago</p>
+          <br>
       <% end %>
     </dl>
   </div>

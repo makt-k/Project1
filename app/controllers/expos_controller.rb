@@ -3,7 +3,7 @@ class ExposController < ApplicationController
   before_action :get_user
 
   def index
-    @expos = Expo.all
+      @expos = Expo.all
   end
 
   def new
@@ -13,6 +13,10 @@ class ExposController < ApplicationController
   def create
     @user.expos << Expo.create!(expo_params)
     redirect_to :root
+  end
+
+  def home
+    render :layout => false
   end
 
   def show
