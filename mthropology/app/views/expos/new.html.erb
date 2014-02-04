@@ -2,7 +2,6 @@
   <%= form_for [@user, @expo] do |form| %>
     <p><%= form.text_field :title, placeholder: "Title" %></p>
     <p><%= form.text_area :body, placeholder: "Ideas" %></p>
-    <p><%= f.file_field :url, placeholder: "Upload file link"%></p>
     <p><%= form.text_field :tag, placeholder: "Tag" %></p>
     <p><%= form.submit %></p>
   <% end %>
