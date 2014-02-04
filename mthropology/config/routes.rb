@@ -1,6 +1,6 @@
 Mthropology::Application.routes.draw do
-  root to: 'expos#index'
-  get '/images' => 'images#show'
+  root to: 'home_page#index'
+  resources :expos, :only => :index
   resources :users do
     resources :idealogs, :expos
   end
