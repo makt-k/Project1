@@ -3,7 +3,11 @@ class ExposController < ApplicationController
   before_action :get_user
 
   def index
+    if params[:search]
+      @expos = Expo.search(params[:search])
+    else
       @expos = Expo.all
+    end
   end
 
   def new
@@ -26,7 +30,7 @@ class ExposController < ApplicationController
   private
 
   def expo_params
-    params.require(:expo).permit(:title, :body, :url, :tag, :user_id, :id, :created_at)
+    params.require(:expo).permit(:title, :body, :art, :url, :tag, :user_id, :id, :created_at)
   end
 
   def get_user
@@ -34,3 +38,6 @@ class ExposController < ApplicationController
   end
 
 end
+
+
+
