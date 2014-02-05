@@ -5,6 +5,7 @@
     </header>
     <body>
       <p><%= @expo.body %></p>
+      <p><%= image_tag @expo.art.url(:medium) %></p>
     </body>
     <%= link_to "Log a new idea", new_user_idealog_path(@user.id) %><br>
     <%= link_to "Create an expo", new_user_expo_path(@user.id) %><br>

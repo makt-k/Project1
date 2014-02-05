@@ -19,6 +19,21 @@ class IdealogsController < ApplicationController
     @idealog = Idealog.find(params[:id])
   end
 
+  def edit
+    @idealog = Idealog.find(params[:id])
+  end
+
+  def update
+    @idealog = Idealog.find(params[:id])
+    @idealog.update_attributes(idealog_params)
+    redirect_to user_path(@user.id)
+  end
+
+  def destroy
+    @idealog = Idealog.find(params[:id])
+    @idealog.destroy
+  end
+
   private
 
   def idealog_params
