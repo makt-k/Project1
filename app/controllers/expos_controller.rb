@@ -16,7 +16,7 @@ class ExposController < ApplicationController
 
   def create
     @user.expos << Expo.create!(expo_params)
-    redirect_to :root
+    redirect_to user_path(@user.id)
   end
 
   def home
@@ -25,6 +25,22 @@ class ExposController < ApplicationController
 
   def show
     @expo = Expo.find(params[:id])
+  end
+
+  def edit
+    @expo = Expo.find(params[:id])
+  end
+
+  def update
+    @expo = Expo.find(params[:id])
+    @expo.update_attributes(idealog_params)
+    redirect_to user_path(@user.id)
+  end
+
+  def destroy
+    @expo = Expo.find(params[:id])
+    @expo.destroy
+    redirect_to user_path(@user.id)
   end
 
   private
