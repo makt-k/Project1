@@ -8,9 +8,9 @@
   </head>
   <header>
     <div class="jumbotron">
-     <h1 id="title">mthropology</h1>
       <div class="navbar navbar-fixed-top">
         <ul class="nav navbar-nav">
+          <li class="nav"><%= link_to "introduction", intro_path %></li>
           <li class="nav"><%= link_to "collection", root_url %></li>
           <li class="nav"><%= link_to "expos", expos_path %></li>
           <% if user_signed_in? %>
@@ -30,6 +30,8 @@
           <% end %>
         </div>
       </div>
+        <h1 id="title">mthropology</h1>
+          <p id="intro">inspire and display dialogues between people and their things</p>
     </div>
   </header>
   <body>

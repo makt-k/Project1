@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
+
   def new
     @user.id = current_user.id
     @user = User.new

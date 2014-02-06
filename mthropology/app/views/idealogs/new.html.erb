@@ -3,7 +3,7 @@
   <%= form_for [@user, @idealog] do |form| %>
     <p><%= form.text_area :title, placeholder: "Title", :cols => "120", :rows => "1" %></p>
     <p><%= form.text_area :body, placeholder: "Ideas", :cols => "120", :rows => "10" %></p>
-    <p><%= form.text_field :tag, placeholder: "Tag", :cols => "120", :rows => "1"%></p>
+    <p><%= form.text_area :tag, placeholder: "Artifact URL", :cols => "120", :rows => "1"%></p>
     <p><%= form.submit %></p>
   <% end %>
 </div>
