@@ -19,10 +19,6 @@ class ExposController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
-  def home
-    render :layout => false
-  end
-
   def show
     @expo = Expo.find(params[:id])
   end

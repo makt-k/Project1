@@ -5,14 +5,15 @@
       <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
       <%= csrf_meta_tags %>
+      <link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
   </head>
   <header>
     <div class="jumbotron">
       <div class="navbar navbar-fixed-top">
         <ul class="nav navbar-nav">
+          <li class="nav"><%= link_to "home", root_url %></li>
           <li class="nav"><%= link_to "introduction", intro_path %></li>
-          <li class="nav"><%= link_to "collection", root_url %></li>
-          <li class="nav"><%= link_to "expos", expos_path %></li>
+          <li class="nav"><%= link_to "exhibits", expos_path %></li>
           <% if user_signed_in? %>
             <li class="nav"><%= link_to "portfolio", user_path(current_user.id) %></li>
             <li class="nav"><%= link_to "sign out", destroy_user_session_path,  :method => :delete %></li>
@@ -23,35 +24,34 @@
         </ul>
         <div class="navbar-form navbar-right" role="search">
           <%= form_tag('/search_images') do %>
-          <%= text_field_tag :term, nil, placeholder: 'search the collection' %>
-          <div class="btn">
-            <%= submit_tag "search" %>
-          </div>
+          <%= text_field_tag :term, nil, placeholder: 'V&A collection' %>
+            <div class="btn">
+        </div>
+              <%= submit_tag "search" %>
           <% end %>
         </div>
       </div>
         <h1 id="title">mthropology</h1>
-          <p id="intro">inspire and display dialogues between people and their things</p>
+          <p id="tagline">inspire and display dialogues between people and their things</p>
     </div>
   </header>
   <body>
-     <% unless params[:controller] == "home_page" && params[:action] == 'index' %> <div id="sidebar">
-        <div id="vam">
-          <% @sources.zip(@desc).each do |source, desc| %>
-            <a href="<%= source %>"><img src="<%= source %>" alt="<%= desc.inner_text.to_s%>" title="<%= desc.inner_text.to_s%>" width="300"></a>
-          <% end %>
-        </div>
+     <% unless params[:controller] == "home_page" && params[:action] == 'index' %>
+      <div id="sidebar">
+        <% @sources.zip(@desc).each do |source, desc| %>
+          <a href="<%= source %>"><img src="<%= source %>" alt="<%= desc.inner_text.to_s%>" title="<%= desc.inner_text.to_s%>" width="300"></a>
+        <% end %>
       </div>
       <% else %>
-        <!-- This is the code for  home#index -->
+        <!-- This is the code for home#index -->
         <div id="homepage">
-        <ul id="grid">
-          <% @sources.zip(@desc).each do |source, desc| %>
-            <li class="object"><a href="<%= source %>"><img src="<%= source %>" alt="<%= desc.inner_text.to_s%>" title="<%= desc.inner_text.to_s%>" height=90% width=90%></a></li>
-          <% end %>
-      </ul>
-    </div>
-    <% end %>
+          <ul id="grid">
+            <% @sources.zip(@desc).each do |source, desc| %>
+              <li class="object"><a href="<%= source %>"><img src="<%= source %>" alt="<%= desc.inner_text.to_s%>" title="<%= desc.inner_text.to_s%>" height=90% width=90%></a></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     <div id="yield">
       <%= yield %>
     </div>

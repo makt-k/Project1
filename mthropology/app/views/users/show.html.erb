@@ -1,22 +1,26 @@
 <div class="container">
   <div id="yield">
   <header>
-    <h2><%=@user.email%></h2>
+    <h5 class="login-status">Login as: <%=@user.email%></h5>
   </header>
-    <h3>Idealogs</h3>
-    <dl>
+    <h3>Ideas</h3>
       <% @user.idealogs.each do |idealog| %>
-      <dt><%=link_to idealog.title, user_idealog_path(idealog.user_id, idealog.id) %></dt><dt>Created <%= time_ago_in_words(idealog.created_at)%> ago</dt>
+        <ul class="idealog-list">
+          <li><%=link_to idealog.title, user_idealog_path(idealog.user_id, idealog.id) %> Created <%= time_ago_in_words(idealog.created_at)%> ago</li>
+        </ul>
       <% end %>
-    </dl>
-    <%= link_to "Log a new idea", new_user_idealog_path(@user.id) %><br>
-
-    <h3>Expos</h3>
-    <dl>
+      <br>
+    <%= link_to "Log a new idea", new_user_idealog_path(@user.id) %>
+      <br>
+      <br>
+    <h3>Exhibits</h3>
       <% @user.expos.each do |expo| %>
-      <dt><%=link_to expo.title, user_expo_path(expo.user_id, expo.id) %></dt><dt>Created <%= time_ago_in_words(expo.created_at)%> ago</dt>
+        <ul class="expo-list">
+          <li><%=link_to expo.title, user_expo_path(expo.user_id, expo.id) %>  Created <%= time_ago_in_words(expo.created_at)%> ago</li>
+        </ul>
       <% end %>
-    </dl>
-    <%= link_to "Display a new expo", new_user_expo_path(@user.id) %><br>
+      <br>
+    <%= link_to "Display a new expo", new_user_expo_path(@user.id) %>
+      <br>
   </div>
 </div>

@@ -9,7 +9,7 @@ class Expo < ActiveRecord::Base
   validates_attachment_content_type :art, :content_type => /\Aimage\/.*\Z/
 
   def self.search(search)
-      find(:all, :conditions => ['tag LIKE ?', "%#{search}%"])
+    find(:all, :conditions => ['tag LIKE ?', "%#{search}%"])
   end
 
 end

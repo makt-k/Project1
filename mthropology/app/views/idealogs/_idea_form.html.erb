@@ -1,6 +1,9 @@
 <%= form_for [@user, @idealog] do |form| %>
-  <p><%= form.text_area :title, placeholder: "Title",:cols => "70", :rows => "1" %></p>
-  <p><%= form.text_area :body, placeholder: "Ideas", :cols => "70", :rows => "10" %></p>
-  <p><%= form.text_area :tag, placeholder: "Tag", :cols => "70", :rows => "1"%></p>
+  <p><% form.label :title %><br>
+    <%= form.text_area :title, placeholder: "Title",:cols => "70", :rows => "1" %></p>
+  <p><% form.label :body %><br>
+    <%= form.text_area :body, placeholder: "Ideas", :cols => "70", :rows => "10" %></p>
+  <p><% form.label :tag %><br>
+    <%= form.text_area :tag, placeholder: "Tag", :cols => "70", :rows => "1"%></p>
   <p><%= form.submit %></p>
 <% end %>

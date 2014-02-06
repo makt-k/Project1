@@ -14,27 +14,29 @@
 @import "bootstrap";
 
 .navbar-fixed-top {
-    background-color: #bdbdbd;
-    }
+  background-color: #830300;
+  }
 
 .navbar-nav li {
-    display: inline;
-    }
+  display: inline;
+  }
 
 .navbar-nav li a {
-    color: #ffffff;
-    }
+  color: #ffffff;
+  font-family: 'Nova Square', cursive;
+  font-size: 1.5em;
+  }
 
 #sidebar {
-   width: 300px;
-   height: 400px;
-   right: 50%;
-   margin-right:-550px;
-   position: absolute;
-   overflow-y: scroll;
-   overflow-x: hidden;
-   border:1px dotted gray;
-   }
+ width: 300px;
+ height: 400px;
+ right: 50%;
+ margin-right:-550px;
+ position: absolute;
+ overflow-y: scroll;
+ overflow-x: hidden;
+ border:1px dotted gray;
+ }
 
 #yield {
   margin-left: 30px;
@@ -42,50 +44,65 @@
   position: absolute;
   }
 
-#sidebar #vam a img:hover{
+#sidebar a img:hover{
   -webkit-filter: opacity(0.5);
-}
+  }
+
+.jumbotron {
+  background-color: #bdbdbd;
+  }
 
 #title {
   text-align: center;
   color: #FFFFFF;
-  font-size: 3em;
-}
+  font-size: 7em;
+  font-family: 'Nova Square', cursive;
+  }
+
+#tagline {
+  font-size: 2.3em;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Nova Square', cursive;
+  }
 
 #introduction {
   text-align: center;
   font-size: 1.5em;
-}
+  }
 
 #grid a:hover img {
-    -webkit-filter: opacity(0.75) grayscale(20%);
-    }
+  -webkit-filter: opacity(0.75) grayscale(20%);
+  -moz-filter: opacity(0.75) grayscale(20%);
+  }
 
 #grid {
-    list-style: none;
-    }
+  list-style: none;
+  }
 
 #homepage {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: -1.875em;
-    -webkit-column-count: 5;
-    -webkit-column-fill: auto;
-    -moz-column-count: 5;
-    -moz-column-fill: auto;
-    column-count: 5;
-    column-fill: auto;
-    }
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: -1.875em;
+  -webkit-column-count: 5;
+  -webkit-column-fill: auto;
+  -moz-column-count: 5;
+  -moz-column-fill: auto;
+  column-count: 5;
+  column-fill: auto;
+  }
 
 #grid .object {
-    margin-bottom: 4em;
-    column-break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    -moz-column-break-inside: avoid;
-    }
+  margin-bottom: 4em;
+  column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  }
 
-#intro {
-    font-size: 3 em;
-    text-align: center;
-    color: #ffffff
-}
+.btn {
+  padding: 0px
+  }
+
+.navbar-right {
+  padding: none;
+  }
