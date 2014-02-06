@@ -1,7 +1,8 @@
 class HomePageController < ApplicationController
 
   def index
-    render :layout => 'home_page'
+
+     render :layout => 'application'
   end
 
   def show

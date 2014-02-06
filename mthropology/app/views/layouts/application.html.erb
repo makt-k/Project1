@@ -22,8 +22,8 @@
           <% end %>
         </ul>
         <div class="navbar-form navbar-right" role="search">
-          <%= form_tag("/", method: "get") do%>
-          <%= text_field_tag(:term, "explore the collection") %>
+          <%= form_tag('/search_images') do %>
+          <%= text_field_tag :term, nil, placeholder: 'search the collection' %>
           <div class="btn">
             <%= submit_tag "search" %>
           </div>
@@ -35,14 +35,23 @@
     </div>
   </header>
   <body>
-      <div id="sidebar">
+     <% unless params[:controller] == "home_page" && params[:action] == 'index' %> <div id="sidebar">
         <div id="vam">
-          <% show %>
           <% @sources.zip(@desc).each do |source, desc| %>
             <a href="<%= source %>"><img src="<%= source %>" alt="<%= desc.inner_text.to_s%>" title="<%= desc.inner_text.to_s%>" width="300"></a>
           <% end %>
         </div>
       </div>
+      <% else %>
+        <!-- This is the code for  home#index -->
+        <div id="homepage">
+        <ul id="grid">
+          <% @sources.zip(@desc).each do |source, desc| %>
+            <li class="object"><a href="<%= source %>"><img src="<%= source %>" alt="<%= desc.inner_text.to_s%>" title="<%= desc.inner_text.to_s%>" height=90% width=90%></a></li>
+          <% end %>
+      </ul>
+    </div>
+    <% end %>
     <div id="yield">
       <%= yield %>
     </div>
