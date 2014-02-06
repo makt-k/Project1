@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Edit Idealog</h2>
+  <%= form_for [@user, @idealog] do |form| %>
+    <p><%= form.text_area :title, placeholder: "Title",:cols => "120", :rows => "1" %></p>
+    <p><%= form.text_area :body, placeholder: "Ideas", :cols => "120", :rows => "10" %></p>
+    <p><%= form.text_area :tag, placeholder: "Tag", :cols => "120", :rows => "1"%></p>
+    <p><%= form.submit %></p>
+  <% end %>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <div id="yield">
+    <header>
+      <h2><%= @expo.title%></h2>
+    </header>
+    <body>
+      <p><%= @expo.body %></p>
+      <p><%= image_tag @expo.art.url(:medium) %></p>
+    </body>
+    <div class="login">
+      <% if user_signed_in? && @expo.user.id == current_user.id %>
+      <%= link_to "Edit", edit_user_expo_path(@expo.user.id, @expo.id) %><br>
+      <%= link_to "Delete", user_expo_path(@expo.user.id, @expo.id), method: :delete %><br>
+      <% end %>
+  </div>
+</div>

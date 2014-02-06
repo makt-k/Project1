@@ -1,0 +1,34 @@
+#grid a:hover img {
+    -webkit-filter: opacity(0.75) grayscale(20%);
+    }
+
+#grid {
+    list-style: none;
+    }
+
+#homepage {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: -1.875em;
+    -webkit-column-count: 5;
+    -webkit-column-fill: auto;
+    -moz-column-count: 5;
+    -moz-column-fill: auto;
+    column-count: 5;
+    column-fill: auto;
+    }
+
+#grid .object {
+    margin-bottom: 4em;
+    column-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    }
+
+#intro {
+    font-size: 3 em;
+    text-align: center;
+    color: #ffffff
+}
+
+

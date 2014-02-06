@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mthropology</title>
+      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %>
+  </head>
+  <header>
+    <div class="jumbotron">
+      <div class="navbar navbar-fixed-top">
+        <ul class="nav navbar-nav">
+          <li class="nav"><%= link_to "introduction", intro_path %></li>
+          <li class="nav"><%= link_to "collection", root_url %></li>
+          <li class="nav"><%= link_to "expos", expos_path %></li>
+          <% if user_signed_in? %>
+            <li class="nav"><%= link_to "portfolio", user_path(current_user.id) %></li>
+            <li class="nav"><%= link_to "sign out", destroy_user_session_path,  :method => :delete %></li>
+          <% else %>
+            <li class="nav"><%= link_to "sign up", new_user_registration_path %></li>
+            <li class="nav"><%= link_to "sign in", user_session_path %></li>
+          <% end %>
+        </ul>
+        <div class="navbar-form navbar-right" role="search">
+          <%= form_tag("/", method: "get") do%>
+          <%= text_field_tag(:term, "explore the collection") %>
+          <div class="btn">
+            <%= submit_tag "search" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+        <h1 id="title">mthropology</h1>
+          <p id="intro">inspire and display dialogues between people and their things</p>
+    </div>
+  </header>
+  <body>
+      <div id="sidebar">
+        <div id="vam">
+          <% show %>
+          <% @sources.zip(@desc).each do |source, desc| %>
+            <a href="<%= source %>"><img src="<%= source %>" alt="<%= desc.inner_text.to_s%>" title="<%= desc.inner_text.to_s%>" width="300"></a>
+          <% end %>
+        </div>
+      </div>
+    <div id="yield">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
