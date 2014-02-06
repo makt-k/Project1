@@ -1,5 +1,4 @@
 class IdealogsController < ApplicationController
- before_filter :authenticate_user!
  before_action :get_user
 
   def index
@@ -32,6 +31,7 @@ class IdealogsController < ApplicationController
   def destroy
     @idealog = Idealog.find(params[:id])
     @idealog.destroy
+    redirect_to user_path(@user.id)
   end
 
   private

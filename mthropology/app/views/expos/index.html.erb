@@ -3,8 +3,8 @@
     <div class="form-inline" role="form">
       <div class="form-group">
         <%= form_tag expos_path, :method => 'get' do %>
-          <%= text_field_tag :search %></div>
-            <div class="btn"><%= submit_tag "Search" %></div>
+          <%= text_field_tag(:search, "tags") %></div>
+            <div class="btn"><%= submit_tag "search" %></div>
         <% end %>
       </div>
     </div>
@@ -12,7 +12,7 @@
     <div id="yield">
       <dl>
         <% @expos.each do |expo| %>
-          <dt> <%= link_to expo.title, user_expo_path(expo.user.id, expo.id)%>  by: <%=expo.user.name%></dt>
+          <dt> <%= link_to expo.title, user_expo_path(expo.user.id, expo.id)%>  by: <%=expo.user.email%></dt>
             <p class="time">Created <%= time_ago_in_words(expo.created_at)%> ago</p>
             <br>
         <% end %>

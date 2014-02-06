@@ -7,6 +7,7 @@
       <p><%= @idealog.body %></p>
     </body>
     <%= link_to "Edit", edit_user_idealog_path(@idealog.user.id, @idealog.id) %><br>
+    <%= link_to "Delete", user_idealog_path(@idealog.user.id, @idealog.id), method: :delete %><br>
     <%= link_to "Log a new idea", new_user_idealog_path(@user.id) %><br>
     <%= link_to "Create an expo", new_user_expo_path(@user.id) %><br>
   </div>
