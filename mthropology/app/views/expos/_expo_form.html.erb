@@ -1,0 +1,8 @@
+<%= form_for [@user, @expo] do |form| %>
+  <p><%= form.text_area :title, placeholder: "Title", :cols => "70", :rows => "1" %></p>
+  <p><%= form.text_area :body, placeholder: "Ideas", :cols => "70", :rows => "10" %></p>
+  <p><%= form.file_field :art%></p>
+  <p><%= form.text_area :url, placeholder: "Artifact Link", :cols => "70", :rows => "1" %></p>
+  <p><%= form.text_area :tag, placeholder: "Tag", :cols => "70", :rows => "1" %></p>
+  <p><%= form.submit %></p>
+<% end %>

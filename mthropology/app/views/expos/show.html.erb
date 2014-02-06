@@ -6,6 +6,7 @@
     <body>
       <p><%= @expo.body %></p>
       <p><%= image_tag @expo.art.url(:medium) %></p>
+      <p> <%= @expo.tag %></p>
     </body>
     <div class="login">
       <% if user_signed_in? && @expo.user.id == current_user.id %>
