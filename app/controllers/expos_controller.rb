@@ -43,6 +43,9 @@ class ExposController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
+  def intro
+  end
+
   private
 
   def expo_params
