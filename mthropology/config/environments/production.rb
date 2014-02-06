@@ -28,9 +28,9 @@ Mthropology::Application.configure do
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-      :bucket => ENV['mthropology'],
-      :access_key_id => ENV['AKIAJRCN2YUQLRMMO52A'],
-      :secret_access_key => ENV['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']
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
 end
