@@ -29,7 +29,7 @@ class ExposController < ApplicationController
 
   def update
     @expo = Expo.find(params[:id])
-    @expo.update_attributes(idealog_params)
+    @expo.update_attributes(expo_params)
     redirect_to user_path(@user.id)
   end
 

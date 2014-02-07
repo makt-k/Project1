@@ -7,6 +7,7 @@
       <p class="body">Content: <%= @expo.body %></p>
       <p><%= image_tag @expo.art.url(:medium) %></p>
       <p class="tag">Tags: <%= @expo.tag %></p>
+      <p class="url"> URL: <a href="<%= @expo.url %>">Inspiration</a></p>
     </body>
     <div class="login">
       <% if user_signed_in? && @expo.user.id == current_user.id %>
