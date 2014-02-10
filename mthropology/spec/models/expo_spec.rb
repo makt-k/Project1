@@ -5,3 +5,4 @@ describe Expo do
     it { should belong_to :user }
   end
 end
+
