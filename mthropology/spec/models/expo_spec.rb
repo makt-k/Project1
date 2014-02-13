@@ -9,6 +9,7 @@ describe Expo do
     before :each do
       @expo1 = Expo.create(title: "title", body: "body", tag: "test")
       @expo2 = Expo.create(title: "title2", body: "body2", tag: "test")
+      @expo3 = Expo.create(title: "title3", body: "body3", tag: "not")
     end
     it "returns an array of expos with the searched tag" do
       expect(Expo.search("test")).to eq [@expo1, @expo2]
