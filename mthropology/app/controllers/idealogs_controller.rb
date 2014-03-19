@@ -2,7 +2,7 @@ class IdealogsController < ApplicationController
  before_action :get_user
 
   def index
-    @idealogs = Idealog.all
+    @idealogs = Idealog.includes(:user).all
   end
 
   def new

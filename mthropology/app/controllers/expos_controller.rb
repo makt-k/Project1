@@ -6,7 +6,7 @@ class ExposController < ApplicationController
     if params[:search]
       @expos = Expo.search(params[:search])
     else
-      @expos = Expo.all
+      @expos = Expo.includes(:user).all
     end
   end
 
