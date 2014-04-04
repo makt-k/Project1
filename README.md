@@ -1,4 +1,4 @@
-==README
+
 
 Mthropology, a concocted word derived from Material Anthropology, is a space where the public can interact with the collection from the Victoria and Albert Museum, scribble down notes as inspiration hits, and engage in dialogue with others by showcasing their work.
 
